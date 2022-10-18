@@ -11,6 +11,12 @@ module.exports = {
       center: true,
     },
     extend: {
+      letterSpacing: {
+        subtitle: '20px'
+      },
+      fontSize: {
+        title: '96px'
+      },
       fontFamily: {
         'sans': ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
         'title': ['Abril Fatface', 'cursive']
