@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>React Basic</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+	<h1 class="text-7xl">Hi Mom</h1>
+
+	<div id="app"></div>
+
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+	<script type="text/babel">
+		// re-render
+
+		function MyButton (props) {
+			return <button className="rounded bg-slate-300 p-2 shadow" onClick={props.ketikaDiKlik}>
+				{props.title}
+			</button>
+		}
+
+		function App () {
+			console.log('aku kerender')
+			const [name, setName] = React.useState('Bambang')
+			const [age, setAge] = React.useState(18)
+
+			return <div>
+				<h2 className="text-6xl">
+					Hi {name}, your age is {age}
+				</h2>
+
+				<MyButton title="Ubah Nama" ketikaDiKlik={() => setName('James')} />
+			</div>
+		}
+
+		const domContainer = document.querySelector('#app')
+		const element = React.createElement(App)
+		const root = ReactDOM.createRoot(domContainer)
+		root.render(element)
+	</script>
+</body>
+</html>
