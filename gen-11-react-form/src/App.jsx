@@ -1,8 +1,8 @@
-import FormHandlingHook from "./FormHandlingHook";
+import FormHandlingCheckbox from "./FormHandlingCheckbox";
 
 export default function App () {
   return <>
-    <FormHandlingHook />
+    <FormHandlingCheckbox />
   </>
 }
 
