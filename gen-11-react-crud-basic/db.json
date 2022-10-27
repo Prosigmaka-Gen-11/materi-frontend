@@ -1,0 +1,24 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "presiden gigit anjing",
+      "author": "Bambang Mcclaren"
+    },
+    {
+      "title": "presiden gigit sekretaris",
+      "author": "Bambang Mcclaren",
+      "id": 4
+    },
+    {
+      "title": "presiden gigit bendahara",
+      "author": "Bambang Mcclaren",
+      "id": 5
+    },
+    {
+      "title": "Aku juga ingin digigit sama presiden",
+      "author": "Bambang",
+      "id": 6
+    }
+  ]
+}
