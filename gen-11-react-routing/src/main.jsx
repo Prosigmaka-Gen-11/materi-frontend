@@ -7,6 +7,7 @@ import About from './pages/About'
 import BookLayout from './pages/BookLayout'
 import BookList from './pages/BookList'
 import BookForm from './pages/BookForm'
+import BookDetail from './pages/BookDetail'
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: '/book', element: <BookLayout />, children: [
     { path: 'list', element: <BookList /> },
     { path: 'form', element: <BookForm /> },
+    { path: ':bookId', element: <BookDetail /> },
   ] }
 ])
 

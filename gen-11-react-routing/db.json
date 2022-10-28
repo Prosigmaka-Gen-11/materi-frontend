@@ -1,0 +1,14 @@
+{
+	"books": [
+		{
+			"id": 1,
+			"title": "Tractatus Logico Philosophicus",
+			"author": "Ludwig Wittgenstein"
+		},
+		{
+			"id": 2,
+			"title": "The Black Swan: The Impact of the Highly Improbable",
+			"author": "Nassim Nicholas Taleb"
+		}
+	]
+}
