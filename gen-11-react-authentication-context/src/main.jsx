@@ -7,10 +7,13 @@ import AuthProvider from './AuthProvider'
 import Home from './Home'
 import About from './About'
 import Login from './Login'
+import ProtectedLayout from './ProtectedLayout'
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
-  { path: '/about', element: <About /> },
+  { path: '', element: <ProtectedLayout />, children: [
+    { path: '/', element: <Home /> },
+    { path: '/about', element: <About /> },
+  ]},
 
   { path: '/login', element: <Login /> },
 ])

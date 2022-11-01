@@ -1,11 +1,11 @@
 import axios from "axios"
 import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 import { AuthContext } from "./AuthProvider"
 
 export default function Login() {
 	const navigate = useNavigate()
-	const { setUserData, setToken } = useContext(AuthContext)
+	const { handleAfterLogin, isLogin } = useContext(AuthContext)
 
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
@@ -18,13 +18,15 @@ export default function Login() {
 			password
 		}).then(res => {
 			console.log(res.data)
-			setUserData(res.data)
-			setToken(res.data.token)
-			navigate('/')
+			handleAfterLogin(res.data)
 		}).catch(err => {
 			console.log(err.response)
 			alert(err.message)
 		})
+	}
+
+	if (isLogin) {
+		return <Navigate to="/" />
 	}
 
 	return <>
