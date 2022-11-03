@@ -1,11 +1,17 @@
 import { useSelector, useDispatch } from "react-redux"
-import { ubahJudul } from "./bookSlice"
+import { ubahJudul, ubahSemua, ubahTipe } from "./bookSlice"
 
 export default function App () {
   const bookSlice = useSelector(state => state.book)
   const dispatch = useDispatch()
 
-  console.log(bookSlice)
+  const handleUbahTipe = () => {
+    dispatch(ubahTipe({
+      tipeBuku: 'Biografi',
+      penulis: 'Bambang Suyatno'
+    }))
+    dispatch(ubahJudul())
+  }
 
   return <>
     <h1>My Book</h1>
@@ -18,6 +24,22 @@ export default function App () {
 
     <button onClick={() => dispatch(ubahJudul())}>
       Ubah Judul
+    </button>
+
+    <button onClick={() => dispatch(ubahTipe('Light Novel'))}>
+      Ubah Tipe
+    </button>
+
+    <button onClick={handleUbahTipe}>
+      Ubah Tipe 2
+    </button>
+
+    <button onClick={() => dispatch(ubahSemua({
+      title: 'Menggapai Hari',
+      type: 'Pelajaran Hidup',
+      author: 'Moese'
+    }))}>
+      Ubah Semua
     </button>
   </>
 }

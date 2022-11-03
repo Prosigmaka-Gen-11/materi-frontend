@@ -12,10 +12,17 @@ export const bookSlice = createSlice({
 	reducers: {
 		ubahJudul (state) {
 			state.title = 'Menggapai Pagi'
+		},
+		ubahTipe (state, action) {
+			state.type = action.payload.tipeBuku
+			state.author = action.payload.penulis
+		},
+		ubahSemua (state, action) {
+			return action.payload
 		}
 	}
 })
 
-export const { ubahJudul } = bookSlice.actions
+export const { ubahJudul, ubahTipe, ubahSemua } = bookSlice.actions
 
 export default bookSlice.reducer
