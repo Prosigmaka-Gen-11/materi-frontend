@@ -19,10 +19,13 @@ export const bookSlice = createSlice({
 		},
 		ubahSemua (state, action) {
 			return action.payload
+		},
+		reset () {
+			return { ...initialState }
 		}
 	}
 })
 
-export const { ubahJudul, ubahTipe, ubahSemua } = bookSlice.actions
+export const { ubahJudul, ubahTipe, ubahSemua, reset } = bookSlice.actions
 
 export default bookSlice.reducer

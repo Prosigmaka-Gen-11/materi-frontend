@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { ubahJudul, ubahSemua, ubahTipe } from "./bookSlice"
+import { ubahJudul, ubahSemua, ubahTipe, reset } from "./bookSlice"
 
 export default function App () {
   const bookSlice = useSelector(state => state.book)
@@ -40,6 +40,10 @@ export default function App () {
       author: 'Moese'
     }))}>
       Ubah Semua
+    </button>
+
+    <button onClick={() => dispatch(reset())}>
+      reset state
     </button>
   </>
 }
